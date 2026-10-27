@@ -1,0 +1,50 @@
+{
+  "protocol": "tls_record",
+  "title": "TLS Record Layer Outer Envelope",
+  "reference": "RFC 5246 / RFC 8446",
+  "fixed_header_bytes": 5,
+  "fields": [
+    {
+      "field_name": "content_type",
+      "byte_offset_start": 0,
+      "byte_offset_end": 1,
+      "bit_mask": "0xFF",
+      "field_type": "uint8",
+      "endianness": "big",
+      "discriminant_role": "protocol_envelope_discriminant",
+      "description": "Record layer content type.",
+      "enums": {
+        "20": "CHANGE_CIPHER_SPEC",
+        "21": "ALERT",
+        "22": "HANDSHAKE",
+        "23": "APPLICATION_DATA"
+      }
+    },
+    {
+      "field_name": "legacy_version",
+      "byte_offset_start": 1,
+      "byte_offset_end": 3,
+      "bit_mask": "0xFFFF",
+      "field_type": "uint16",
+      "endianness": "big",
+      "discriminant_role": "version",
+      "description": "Legacy TLS wire version field.",
+      "enums": {
+        "0x0301": "TLS_1_0",
+        "0x0302": "TLS_1_1",
+        "0x0303": "TLS_1_2_OR_1_3"
+      }
+    },
+    {
+      "field_name": "length",
+      "byte_offset_start": 3,
+      "byte_offset_end": 5,
+      "bit_mask": "0xFFFF",
+      "field_type": "uint16",
+      "endianness": "big",
+      "discriminant_role": "payload_length",
+      "description": "Length in bytes of following TLS fragment.",
+      "enums": {}
+    }
+  ]
+}

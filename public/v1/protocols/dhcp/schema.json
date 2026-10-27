@@ -1,0 +1,46 @@
+{
+  "protocol": "dhcp",
+  "title": "Dynamic Host Configuration Protocol (DHCP)",
+  "reference": "RFC 2131",
+  "fixed_header_bytes": 240,
+  "fields": [
+    {
+      "field_name": "op",
+      "byte_offset_start": 0,
+      "byte_offset_end": 1,
+      "bit_mask": "0xFF",
+      "field_type": "uint8",
+      "endianness": "big",
+      "discriminant_role": "operation",
+      "description": "Message op code / message type.",
+      "enums": {
+        "1": "BOOTREQUEST",
+        "2": "BOOTREPLY"
+      }
+    },
+    {
+      "field_name": "xid",
+      "byte_offset_start": 4,
+      "byte_offset_end": 8,
+      "bit_mask": "0xFFFFFFFF",
+      "field_type": "uint32",
+      "endianness": "big",
+      "discriminant_role": "correlation_id",
+      "description": "Transaction ID randomly chosen by client.",
+      "enums": {}
+    },
+    {
+      "field_name": "magic_cookie",
+      "byte_offset_start": 236,
+      "byte_offset_end": 240,
+      "bit_mask": "0xFFFFFFFF",
+      "field_type": "uint32",
+      "endianness": "big",
+      "discriminant_role": "magic_discriminant",
+      "description": "DHCP Options Magic Cookie (0x63825363).",
+      "enums": {
+        "0x63825363": "DHCP_MAGIC_VALID"
+      }
+    }
+  ]
+}

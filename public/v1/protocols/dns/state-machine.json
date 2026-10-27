@@ -1,0 +1,20 @@
+{
+  "initial": "HEADER",
+  "transitions": [
+    {
+      "from": "HEADER",
+      "to": "QUESTION",
+      "condition": "qdcount > 0"
+    },
+    {
+      "from": "QUESTION",
+      "to": "ANSWER",
+      "condition": "ancount > 0"
+    },
+    {
+      "from": "ANSWER",
+      "to": "DONE",
+      "condition": "payload_exhausted"
+    }
+  ]
+}

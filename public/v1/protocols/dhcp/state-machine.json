@@ -1,0 +1,15 @@
+{
+  "initial": "BASE_FRAME",
+  "transitions": [
+    {
+      "from": "BASE_FRAME",
+      "to": "OPTIONS_PARSE",
+      "condition": "magic_cookie == 0x63825363"
+    },
+    {
+      "from": "OPTIONS_PARSE",
+      "to": "DONE",
+      "condition": "option_code == 255"
+    }
+  ]
+}

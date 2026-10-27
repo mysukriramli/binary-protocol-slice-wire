@@ -1,0 +1,15 @@
+{
+  "initial": "RECORD_HEADER",
+  "transitions": [
+    {
+      "from": "RECORD_HEADER",
+      "to": "HANDSHAKE_FRAGMENT",
+      "condition": "content_type == 22"
+    },
+    {
+      "from": "RECORD_HEADER",
+      "to": "ENCRYPTED_DATA",
+      "condition": "content_type == 23"
+    }
+  ]
+}

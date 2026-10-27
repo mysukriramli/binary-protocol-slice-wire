@@ -1,0 +1,88 @@
+{
+  "protocol": "dns",
+  "title": "Domain Name System (DNS) Header",
+  "reference": "RFC 1035",
+  "fixed_header_bytes": 12,
+  "fields": [
+    {
+      "field_name": "transaction_id",
+      "byte_offset_start": 0,
+      "byte_offset_end": 2,
+      "bit_mask": "0xFFFF",
+      "field_type": "uint16",
+      "endianness": "big",
+      "discriminant_role": "correlation_id",
+      "description": "Identifier assigned by program generating query to match replies.",
+      "enums": {}
+    },
+    {
+      "field_name": "flags_qr",
+      "byte_offset_start": 2,
+      "byte_offset_end": 3,
+      "bit_mask": "0x80",
+      "field_type": "bit",
+      "endianness": "big",
+      "discriminant_role": "message_direction",
+      "description": "Query (0) or Response (1).",
+      "enums": {
+        "0": "QUERY",
+        "1": "RESPONSE"
+      }
+    },
+    {
+      "field_name": "flags_opcode",
+      "byte_offset_start": 2,
+      "byte_offset_end": 3,
+      "bit_mask": "0x78",
+      "field_type": "uint4",
+      "endianness": "big",
+      "discriminant_role": "operation_discriminant",
+      "description": "Kind of query in this message.",
+      "enums": {
+        "0": "STANDARD_QUERY",
+        "1": "INVERSE_QUERY",
+        "2": "SERVER_STATUS"
+      }
+    },
+    {
+      "field_name": "flags_rcode",
+      "byte_offset_start": 3,
+      "byte_offset_end": 4,
+      "bit_mask": "0x0F",
+      "field_type": "uint4",
+      "endianness": "big",
+      "discriminant_role": "status_code",
+      "description": "Response code.",
+      "enums": {
+        "0": "NOERROR",
+        "1": "FORMERR",
+        "2": "SERVFAIL",
+        "3": "NXDOMAIN",
+        "4": "NOTIMP",
+        "5": "REFUSED"
+      }
+    },
+    {
+      "field_name": "qdcount",
+      "byte_offset_start": 4,
+      "byte_offset_end": 6,
+      "bit_mask": "0xFFFF",
+      "field_type": "uint16",
+      "endianness": "big",
+      "discriminant_role": "count",
+      "description": "Number of entries in question section.",
+      "enums": {}
+    },
+    {
+      "field_name": "ancount",
+      "byte_offset_start": 6,
+      "byte_offset_end": 8,
+      "bit_mask": "0xFFFF",
+      "field_type": "uint16",
+      "endianness": "big",
+      "discriminant_role": "count",
+      "description": "Number of resource records in answer section.",
+      "enums": {}
+    }
+  ]
+}

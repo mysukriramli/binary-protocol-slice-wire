@@ -1,0 +1,27 @@
+{
+  "wire": "binary-protocol-slice-wire",
+  "schema_version": "1.0.0",
+  "generated_at": "2026-10-27T01:17:33.894767+00:00",
+  "source_cursor": "iana-rfcs-wireshark-ir",
+  "freshness_slo_seconds": 86400,
+  "artifacts": [
+    "today.json",
+    "fields.parquet",
+    "llms.txt",
+    "v1/schema.json",
+    "v1/protocols/index.json"
+  ],
+  "coverage": {
+    "supported_protocols": [
+      "dns",
+      "mqtt",
+      "tls_record",
+      "dhcp"
+    ],
+    "total_slices": 15
+  },
+  "limitations": [
+    "Exposes deterministic outer header envelopes only",
+    "Encrypted or variable-length extension payload dissection delegated to higher layers"
+  ]
+}

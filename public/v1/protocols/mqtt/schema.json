@@ -1,0 +1,50 @@
+{
+  "protocol": "mqtt",
+  "title": "MQTT Fixed Header",
+  "reference": "OASIS MQTT v3.1.1 / v5.0",
+  "fixed_header_bytes": 2,
+  "fields": [
+    {
+      "field_name": "packet_type",
+      "byte_offset_start": 0,
+      "byte_offset_end": 1,
+      "bit_mask": "0xF0",
+      "field_type": "uint4",
+      "endianness": "big",
+      "discriminant_role": "control_packet_type",
+      "description": "Control packet type.",
+      "enums": {
+        "1": "CONNECT",
+        "2": "CONNACK",
+        "3": "PUBLISH",
+        "4": "PUBACK",
+        "8": "SUBSCRIBE",
+        "9": "SUBACK",
+        "12": "PINGREQ",
+        "14": "DISCONNECT"
+      }
+    },
+    {
+      "field_name": "flags",
+      "byte_offset_start": 0,
+      "byte_offset_end": 1,
+      "bit_mask": "0x0F",
+      "field_type": "uint4",
+      "endianness": "big",
+      "discriminant_role": "flags",
+      "description": "Packet-specific flags (e.g. DUP, QoS, RETAIN for PUBLISH).",
+      "enums": {}
+    },
+    {
+      "field_name": "remaining_length",
+      "byte_offset_start": 1,
+      "byte_offset_end": 2,
+      "bit_mask": "0x7F",
+      "field_type": "variable_byte_int",
+      "endianness": "little",
+      "discriminant_role": "payload_length",
+      "description": "Length of remaining payload bytes (continuation bit in 0x80).",
+      "enums": {}
+    }
+  ]
+}

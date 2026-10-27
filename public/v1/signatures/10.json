@@ -1,0 +1,7 @@
+{
+  "hex_prefix": "10",
+  "protocol_name": "mqtt",
+  "message_type": "MQTT_CONNECT",
+  "slice_rule": "byte 0 >> 4 == 1",
+  "confidence": "MEDIUM"
+}

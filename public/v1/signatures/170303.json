@@ -1,0 +1,7 @@
+{
+  "hex_prefix": "170303",
+  "protocol_name": "tls_record",
+  "message_type": "TLS_APPLICATION_DATA",
+  "slice_rule": "byte 0 == 0x17 && bytes 1..2 == 0x0303",
+  "confidence": "HIGH"
+}

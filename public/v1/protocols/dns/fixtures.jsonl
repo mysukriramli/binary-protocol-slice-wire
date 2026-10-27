@@ -1,0 +1,2 @@
+{"hex": "103201000001000000000000", "expected": {"transaction_id": 4146, "flags_qr": 0, "flags_opcode": 0, "qdcount": 1, "ancount": 0}}
+{"hex": "103281800001000100000000", "expected": {"transaction_id": 4146, "flags_qr": 1, "flags_rcode": 0, "qdcount": 1, "ancount": 1}}

@@ -1,0 +1,2 @@
+{"hex": "1603010040", "expected": {"content_type": 22, "legacy_version": "0x0301", "length": 64}}
+{"hex": "1703030100", "expected": {"content_type": 23, "legacy_version": "0x0303", "length": 256}}

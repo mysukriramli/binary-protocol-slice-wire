@@ -1,0 +1,3 @@
+{"hex": "1012", "expected": {"packet_type": 1, "remaining_length": 18}}
+{"hex": "300a", "expected": {"packet_type": 3, "remaining_length": 10}}
+{"hex": "c000", "expected": {"packet_type": 12, "remaining_length": 0}}

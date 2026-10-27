@@ -1,0 +1,7 @@
+{
+  "hex_prefix": "c0",
+  "protocol_name": "mqtt",
+  "message_type": "MQTT_PINGREQ",
+  "slice_rule": "byte 0 == 0xC0",
+  "confidence": "HIGH"
+}

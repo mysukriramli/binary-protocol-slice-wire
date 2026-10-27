@@ -1,27 +1,29 @@
 # Binary Protocol Slice Wire
-> Deterministic byte/bit offset slices and discriminant mappings for binary network and IoT protocols.
+> Last Sync: 2026-10-27T01:17:33.894767+00:00 UTC
+> Optimization: Deterministic byte/bit offset slices and discriminant mappings for binary network protocols.
+> Slashes 20,000 to 200,000 tokens of RFC manuals to compact 300-token field slices.
 
-## For Packet Forensics, IoT & Network Debugging Agents
-Instead of loading thousands of pages of RFC specifications or Wireshark dissector definitions (20,000 to 200,000 tokens), query this wire to get exact byte offsets, bitmasks, and field slice definitions for deterministic local zero-copy parsing.
+## Supported Protocol Slices
+### Domain Name System (DNS) Header (`dns`)
+- Reference: RFC 1035 | Header Length: `12 bytes` | Fields: `6`
+- Schema: `v1/protocols/dns/schema.json`
+- State Machine: `v1/protocols/dns/state-machine.json`
+### MQTT Fixed Header (`mqtt`)
+- Reference: OASIS MQTT v3.1.1 / v5.0 | Header Length: `2 bytes` | Fields: `3`
+- Schema: `v1/protocols/mqtt/schema.json`
+- State Machine: `v1/protocols/mqtt/state-machine.json`
+### TLS Record Layer Outer Envelope (`tls_record`)
+- Reference: RFC 5246 / RFC 8446 | Header Length: `5 bytes` | Fields: `3`
+- Schema: `v1/protocols/tls_record/schema.json`
+- State Machine: `v1/protocols/tls_record/state-machine.json`
+### Dynamic Host Configuration Protocol (DHCP) (`dhcp`)
+- Reference: RFC 2131 | Header Length: `240 bytes` | Fields: `3`
+- Schema: `v1/protocols/dhcp/schema.json`
+- State Machine: `v1/protocols/dhcp/state-machine.json`
 
-### Machine Endpoints
-- **Wire Manifest**: `https://{owner}.github.io/binary-protocol-slice-wire/v1/manifest.json`
-- **Protocol Catalog**: `https://{owner}.github.io/binary-protocol-slice-wire/v1/protocols/index.json`
-- **Protocol Slice Schema**: `https://{owner}.github.io/binary-protocol-slice-wire/v1/protocols/{protocol}/schema.json`
-- **Protocol State Machine**: `https://{owner}.github.io/binary-protocol-slice-wire/v1/protocols/{protocol}/state-machine.json`
-- **Protocol Fixtures**: `https://{owner}.github.io/binary-protocol-slice-wire/v1/protocols/{protocol}/fixtures.jsonl`
-- **Hex Prefix Signature**: `https://{owner}.github.io/binary-protocol-slice-wire/v1/signatures/{hex_prefix}.json`
-- **Columnar Slices Parquet**: `https://{owner}.github.io/binary-protocol-slice-wire/fields.parquet`
-- **Token-Efficient Digest**: `https://{owner}.github.io/binary-protocol-slice-wire/llms.txt`
-
-### Canonical Slice Example
-```json
-{
-  "field_name": "flags_qr",
-  "byte_offset_start": 2,
-  "byte_offset_end": 3,
-  "bit_mask": "0x80",
-  "field_type": "bit",
-  "discriminant_role": "message_direction",
-  "enums": {"0": "QUERY", "1": "RESPONSE"}
-}
+## Quick Magic Signature Lookups
+- `0x160301` -> **tls_record** (TLS_HANDSHAKE_CLIENT_HELLO) [HIGH]
+- `0x160303` -> **tls_record** (TLS_RECORD_STANDARD) [HIGH]
+- `0x170303` -> **tls_record** (TLS_APPLICATION_DATA) [HIGH]
+- `0x10` -> **mqtt** (MQTT_CONNECT) [MEDIUM]
+- `0xc0` -> **mqtt** (MQTT_PINGREQ) [HIGH]

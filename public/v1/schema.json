@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "title": "ProtocolSliceSchema",
+  "type": "object",
+  "properties": {
+    "protocol": {
+      "type": "string"
+    },
+    "fixed_header_bytes": {
+      "type": "integer"
+    },
+    "fields": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "field_name": {
+            "type": "string"
+          },
+          "byte_offset_start": {
+            "type": "integer"
+          },
+          "byte_offset_end": {
+            "type": "integer"
+          },
+          "bit_mask": {
+            "type": "string"
+          },
+          "field_type": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "field_name",
+          "byte_offset_start",
+          "byte_offset_end",
+          "field_type"
+        ]
+      }
+    }
+  },
+  "required": [
+    "protocol",
+    "fixed_header_bytes",
+    "fields"
+  ]
+}

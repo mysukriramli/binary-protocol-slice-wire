@@ -1,0 +1,7 @@
+{
+  "hex_prefix": "160301",
+  "protocol_name": "tls_record",
+  "message_type": "TLS_HANDSHAKE_CLIENT_HELLO",
+  "slice_rule": "byte 0 == 0x16 && bytes 1..2 == 0x0301",
+  "confidence": "HIGH"
+}

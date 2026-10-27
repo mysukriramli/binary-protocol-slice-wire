@@ -1,0 +1,15 @@
+{
+  "initial": "FIXED_HEADER",
+  "transitions": [
+    {
+      "from": "FIXED_HEADER",
+      "to": "VARIABLE_HEADER",
+      "condition": "remaining_length > 0"
+    },
+    {
+      "from": "VARIABLE_HEADER",
+      "to": "PAYLOAD",
+      "condition": "type in [CONNECT, PUBLISH, SUBSCRIBE]"
+    }
+  ]
+}

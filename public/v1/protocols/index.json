@@ -1,0 +1,42 @@
+{
+  "updated_at_utc": "2026-10-27T01:17:33.894767+00:00",
+  "total_protocols": 4,
+  "protocols": [
+    {
+      "protocol": "dns",
+      "title": "Domain Name System (DNS) Header",
+      "reference": "RFC 1035",
+      "fixed_header_bytes": 12,
+      "fields_count": 6,
+      "schema_url": "v1/protocols/dns/schema.json",
+      "state_machine_url": "v1/protocols/dns/state-machine.json"
+    },
+    {
+      "protocol": "mqtt",
+      "title": "MQTT Fixed Header",
+      "reference": "OASIS MQTT v3.1.1 / v5.0",
+      "fixed_header_bytes": 2,
+      "fields_count": 3,
+      "schema_url": "v1/protocols/mqtt/schema.json",
+      "state_machine_url": "v1/protocols/mqtt/state-machine.json"
+    },
+    {
+      "protocol": "tls_record",
+      "title": "TLS Record Layer Outer Envelope",
+      "reference": "RFC 5246 / RFC 8446",
+      "fixed_header_bytes": 5,
+      "fields_count": 3,
+      "schema_url": "v1/protocols/tls_record/schema.json",
+      "state_machine_url": "v1/protocols/tls_record/state-machine.json"
+    },
+    {
+      "protocol": "dhcp",
+      "title": "Dynamic Host Configuration Protocol (DHCP)",
+      "reference": "RFC 2131",
+      "fixed_header_bytes": 240,
+      "fields_count": 3,
+      "schema_url": "v1/protocols/dhcp/schema.json",
+      "state_machine_url": "v1/protocols/dhcp/state-machine.json"
+    }
+  ]
+}
