@@ -1,5 +1,5 @@
 # Binary Protocol Slice Wire
-> Last Sync: 2026-11-01T11:55:37.401713+00:00 UTC
+> Last Sync: 2026-11-02T13:41:51.453155+00:00 UTC
 > Optimization: Deterministic byte/bit offset slices and discriminant mappings for binary network protocols.
 > Slashes 20,000 to 200,000 tokens of RFC manuals to compact 300-token field slices.
 
