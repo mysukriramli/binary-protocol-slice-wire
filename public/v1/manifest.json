@@ -1,7 +1,7 @@
 {
   "wire": "binary-protocol-slice-wire",
   "schema_version": "1.0.0",
-  "generated_at": "2026-11-11T12:50:45.429703+00:00",
+  "generated_at": "2026-11-12T13:53:07.861687+00:00",
   "source_cursor": "iana-rfcs-wireshark-ir",
   "freshness_slo_seconds": 86400,
   "artifacts": [
