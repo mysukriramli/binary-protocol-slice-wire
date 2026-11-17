@@ -1,31 +1,31 @@
 {
-  "date": "2026-11-16",
-  "updated_at_utc": "2026-11-16T13:51:36.116758+00:00",
+  "date": "2026-11-17",
+  "updated_at_utc": "2026-11-17T14:43:04.516379+00:00",
   "schema_deltas": [
     {
-      "commit_id": 85,
-      "timestamp_utc": "2026-11-16T13:51:36.116758+00:00",
+      "commit_id": 89,
+      "timestamp_utc": "2026-11-17T14:43:04.516379+00:00",
       "operation": "REGISTER_SLICE",
       "protocol_name": "dns",
       "field_count": 6
     },
     {
-      "commit_id": 86,
-      "timestamp_utc": "2026-11-16T13:51:36.116758+00:00",
+      "commit_id": 90,
+      "timestamp_utc": "2026-11-17T14:43:04.516379+00:00",
       "operation": "REGISTER_SLICE",
       "protocol_name": "mqtt",
       "field_count": 3
     },
     {
-      "commit_id": 87,
-      "timestamp_utc": "2026-11-16T13:51:36.116758+00:00",
+      "commit_id": 91,
+      "timestamp_utc": "2026-11-17T14:43:04.516379+00:00",
       "operation": "REGISTER_SLICE",
       "protocol_name": "tls_record",
       "field_count": 3
     },
     {
-      "commit_id": 88,
-      "timestamp_utc": "2026-11-16T13:51:36.116758+00:00",
+      "commit_id": 92,
+      "timestamp_utc": "2026-11-17T14:43:04.516379+00:00",
       "operation": "REGISTER_SLICE",
       "protocol_name": "dhcp",
       "field_count": 3
