@@ -2,5 +2,5 @@
   "generator": "binary-protocol-slice-wire",
   "runtime": "python-3.11",
   "ir_format": "offset-mask-discriminant-v1",
-  "generated_at_utc": "2026-11-19T14:33:52.465403+00:00"
+  "generated_at_utc": "2026-11-20T14:12:07.646280+00:00"
 }
